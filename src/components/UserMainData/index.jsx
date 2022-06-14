@@ -34,8 +34,8 @@ function UserMainData({ dataUser }) {
                     <div className='sportSee-main-graph'>
                         <GetUserActivityData id={dataUser.id}/>
                         <div className='sportSee-main-grapBloc'>
-                            <GetUserSessionsData />
-                            <GetUserPerformance  />
+                            <GetUserSessionsData id={dataUser.id}/>
+                            <GetUserPerformance  id={dataUser.id}/>
                             <div className='sportSee-score'>
                                 <RPieChart scoreUser={dataUser} />
                             </div>

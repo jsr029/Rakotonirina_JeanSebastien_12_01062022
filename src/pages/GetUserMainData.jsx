@@ -1,9 +1,10 @@
 import React from 'react'
-import { useFetch } from '../components/utils/Hooks'
+/*import { useFetch } from '../components/utils/Hooks'*/
 import UserMainData from '../components/UserMainData'
 import { useParams } from 'react-router-dom'
 import HorizontalMenu from '../components/HorizontalMenu'
 import VerticalMenu from '../components/VerticalMenu'
+import HandleChange from '../components/utils/HandleChange'
 
 /**
  * function <GetUserMainData>
@@ -13,9 +14,10 @@ import VerticalMenu from '../components/VerticalMenu'
  */
 function GetUserMainData() {
 	const id = useParams().id
-    const { data, isLoading, error } = useFetch(
+	const { data, isLoading, error } = HandleChange(id,0)
+    /*const { data, isLoading, error } = useFetch(
 		`http://localhost:5000/user/${id}`
-    )
+    )*/
     	if (error) {
 		return <span>Il y a un problème</span>
 	}
