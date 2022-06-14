@@ -16,7 +16,7 @@ export default function ChooseUserId() {
 
   return (
     <div className="chooseUserData">
-      <h1>Welcome to OpenClassRooms Project 11 SPA</h1>
+      <h1>Welcome to OpenClassRooms Project 12 SPA</h1>
       <p>Developp an Analytics Dashboard with React<br />
       By JSR029 (Jean-Sébastien Rakotonirina)<br />
       Dev ReactJS/Javascript</p>

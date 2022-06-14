@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import HorizontalMenu from '../components/HorizontalMenu'
 import VerticalMenu from '../components/VerticalMenu'
 import HandleChange from '../components/utils/HandleChange'
+import NotFound from '../components/NotFound'
 
 /**
  * function <GetUserMainData>
@@ -14,6 +15,15 @@ import HandleChange from '../components/utils/HandleChange'
  */
 function GetUserMainData() {
 	const id = useParams().id
+	if(id !== '12' && id !== '18')
+	{
+		return (
+			<>
+				<h1>La valeur de id est incorrecte, elle doit être 12 ou 18</h1>
+				<NotFound />
+			</>
+		)		
+	}else{
 	const { data, isLoading, error } = HandleChange(id,0)
     /*const { data, isLoading, error } = useFetch(
 		`http://localhost:5000/user/${id}`
@@ -30,6 +40,7 @@ function GetUserMainData() {
 		</div>
 		</React.Fragment>
 	)
+	}
 };
 
 export default GetUserMainData

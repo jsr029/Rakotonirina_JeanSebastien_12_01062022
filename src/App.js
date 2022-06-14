@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import './styles/main.css';
 import ChooseUserId from './pages/ChooseUserId'
 import GetUserMainData from './pages/GetUserMainData'
-
+import NotFound from './components/NotFound'
 /** 
  *  function <App> is the main function to insert the DOM in Html root id div
  * It manages 2 routes also
@@ -19,6 +19,9 @@ function App() {
             </Route>              
             <Route path='/:id'>
                   <GetUserMainData />
+            </Route>
+            <Route>
+                <NotFound />
             </Route>              
         </Switch>
     </BrowserRouter>
