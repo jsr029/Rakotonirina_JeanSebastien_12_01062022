@@ -115,10 +115,10 @@ ul {
 
 .spotSee-main-bloc {
   width: 100%;
-  min-height: 928px;
+  height: 928px;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
@@ -263,6 +263,7 @@ ul {
 }
 
 .sportSee-activity-item {
+  width: 100%;
   margin: 5px;
   padding: 5px;
   background: #FBFBFB;
