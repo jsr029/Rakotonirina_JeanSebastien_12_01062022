@@ -3,8 +3,7 @@ import { Radar, RadarChart, PolarGrid,
         PolarAngleAxis, Legend, ResponsiveContainer } from 'recharts';
 
 function RRadarChart({ kind, perfData }) {   
-    console.log(kind)
-        // Sample data
+         // Sample data
     let data = []
     const frenchKind = {
         6:'Intensité',
