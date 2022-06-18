@@ -11,6 +11,10 @@ import {
 } from "recharts";
 
 
+/**
+ * Function <DBarChart> gets name, kg, calories user datas
+ * uses <BarChart /> component from recharts library to display bar graph
+ */
 function DBarChart({ sessions }) {
    let data = []
   for(let i=0; i < sessions.length; i++){

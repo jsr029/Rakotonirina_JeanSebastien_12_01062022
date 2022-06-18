@@ -5,10 +5,13 @@ import ChooseUserId from './pages/ChooseUserId'
 import GetUserMainData from './pages/GetUserMainData'
 import NotFound from './components/NotFound'
 /** 
- *  function <App> is the main function to insert the DOM in Html root id div
- * It manages 2 routes also
- * '/' displays the ChooseUserId page 
- * '/:id' displays GetUserMainData page
+ *  Injects DOM in HTML root div
+ * 
+ *  Manages 3 routes :
+ *  - '/' calls ChooseUserId component page 
+ *  - '/:id' calls GetUserMainData component page
+ *  - No path calls component NotFound to display error 404
+ *
  */
 function App() {
    return (

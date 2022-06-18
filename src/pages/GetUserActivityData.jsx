@@ -1,14 +1,12 @@
 import React from 'react'
-/*import { useFetch } from '../components/utils/Hooks'*/
 import UserActivityData from '../components/UserActivityData'
 import HandleChange from '../components/utils/HandleChange'
 
+/**
+ * Function <GetUserActivityData> gets user activity data * 
+ */
 function GetUserActivityData({ id }) {
-    /*const url = window.location.href*/
 	const { data, isLoading, error } = HandleChange(id, 1)
- /*   const { data, isLoading, error } = useFetch(
-		`http://localhost:5000/user/${id}/activity`
-    )*/
     	if (error) {
 		return <span>Il y a un problème</span>
 	}

@@ -14,8 +14,8 @@ import RPieChart from '../RPieChart'
  * <GetUserPerformance> retrieves user performance data for radar chart
  * <RPieChart> retrieves user score data for pie chart
  * <RightBloc> retrieves user data for displaying calories, lipid, protein and glucid counts in the right bloc
- * @params {string} dataUser is an objet which contains userInfos (ids), keydata (counts) 
 */
+
 function UserMainData({ dataUser }) {
     /**Datas from http://localhost:3000/user/${userId} endpoint */
     const USERMAINNAME = dataUser.userInfos.firstName

@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 /**
  * Component <HorizontalMenu>
  * Displays the horizontal menu with NavLink
- * @returns {string} horizontal menu
  */
 function HorizontalMenu() {
     return (

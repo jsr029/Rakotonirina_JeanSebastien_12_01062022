@@ -2,10 +2,10 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 /** 
- * function <ChooseUserId>
- * Displays the page where you choose one user between Kar and Cecilia
- * Catch the id by watch useForm method
- * Passed by the get method form
+ * Displays the page where you choose one user between Karl and Cecilia by their id
+ * 
+ * Catch the id by watch useForm hook, 
+ * Passed by the get method form request
  */
 export default function ChooseUserId() {
   const { register, handleSubmit, watch } = useForm({

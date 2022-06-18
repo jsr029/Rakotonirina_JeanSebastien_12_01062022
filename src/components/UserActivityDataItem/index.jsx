@@ -1,6 +1,10 @@
 import React from 'react'
 import DBarChart from '../DBarChart'
 
+/**
+ * function <UserActivityDataItem> transmits user id and data sessions
+ * 
+ */
 function UserActivityDataItem({ userId, sessions }){
     let sessionsDay = []
     let sessionsKg = []

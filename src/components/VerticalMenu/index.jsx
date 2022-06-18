@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom'
 
 /**
  * Component <VerticalMenu> displays the vertical menu  
- * @returns {string} images like icons
  */
 function VerticalMenu() {
     return (
