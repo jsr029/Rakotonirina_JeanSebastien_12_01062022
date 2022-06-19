@@ -4,8 +4,8 @@ import {
 
 /**
  * Switches between 4 urls, it depends on id value 
- * @param { Number } id 
- * @param { Url } url 
+ * @param { Number } id props user id
+ * @param { Url } url endPoints url
  * @returns { Object } data (object), isLoading (boolean), error, url (string)
  */
 function HandleChange(id, url) {
