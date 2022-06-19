@@ -7,7 +7,6 @@ import RLineChart from '../RLineChart'
  * @return { Component } RLineChart
  */
 function UserSessionsData({ data }) {
-    console.log(data)
     return (
         <>
                  <div className='sportSee-sessions'>

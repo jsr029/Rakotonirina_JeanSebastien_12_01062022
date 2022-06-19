@@ -2,7 +2,14 @@ import React from 'react'
 import { Radar, RadarChart, PolarGrid, 
         PolarAngleAxis, Legend, ResponsiveContainer } from 'recharts';
 
+/**
+ * Displays Radar graph using recharts library
+ * @param { Object } kind {1:cardio, 2:energy, etc..}
+ * @param { Object } perfData [{value:110, kind:6}, {etc..}]
+ * @returns { Component } RadarChart from recharts library
+ */
 function RRadarChart({ kind, perfData }) {   
+    console.log(perfData)
          // Sample data
     let data = []
     const frenchKind = {

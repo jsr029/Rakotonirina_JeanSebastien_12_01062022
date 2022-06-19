@@ -18,6 +18,12 @@ import RPieChart from '../RPieChart'
  * @param { Object } dataUser 
  * Object passed in props which contains
  * id, userInfos{firstname,lastName}, score, keyData{caloriesCount,proteinCount, carbohydrateCount, lipidCount}
+ * @returns { Component } 
+ * - GeteUserActivityData
+ * - GetUserSessionsData
+ * - GetUserPerformance
+ * - RPieChart
+ * - RightBloc
 */
 
 function UserMainData({ dataUser }) {

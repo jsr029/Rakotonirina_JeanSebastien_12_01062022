@@ -9,6 +9,7 @@ import HandleChange from '../components/utils/HandleChange'
  * 
  * @param { Number } id props user id, it is used as parameter in HandleChange function to retrieve data  
  * by the endPoints url case 2 in the switch function
+ * @returns { component } UserSessionsData
  */
 function GetUserSessionsData({ id }) {
 	const { data, isLoading, error } = HandleChange(id, 2)
