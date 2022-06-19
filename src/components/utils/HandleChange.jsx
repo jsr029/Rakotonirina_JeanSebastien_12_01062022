@@ -2,6 +2,12 @@ import {
     useState, useEffect
 } from "react";
 
+/**
+ * Switches between 4 urls, it depends on id value 
+ * @param { Number } id 
+ * @param { Url } url 
+ * @returns { Object } data (object), isLoading (boolean), error, url (string)
+ */
 function HandleChange(id, url) {
     const [data, setData] = useState({})
     const [isLoading, setLoading] = useState(true)

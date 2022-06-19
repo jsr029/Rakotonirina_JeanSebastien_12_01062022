@@ -10,7 +10,7 @@ import {
   
 /**
  * Displays Line Chart graph
- * @param { sessions } sessions props sessions bringing data we need to build Line Chart graph 
+ * @param { Object } sessions props sessions bringing data we need to build Line Chart graph 
  * @returns { Component } LineChart from recharts library
  */
 function RLineChart({ sessions }) {

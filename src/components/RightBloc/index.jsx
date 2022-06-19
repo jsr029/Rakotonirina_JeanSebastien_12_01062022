@@ -1,5 +1,14 @@
 import React from 'react'
 
+/**
+ * Displays right bloc html datas
+ * @param { Number } calories 
+ * @param { Number } protein  * 
+ * @param { Number } glucid 
+ * @param { Number } lipid 
+
+ * @returns { Html } the right bloc with icons image and datas
+ */
 function RightBloc ({ calories, protein, glucid, lipid }) {
     return (
             <div className='sportSee-main-right'>
