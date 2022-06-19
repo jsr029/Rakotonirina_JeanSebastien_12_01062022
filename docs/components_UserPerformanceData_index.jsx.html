@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/UserActivityData/index.jsx</title>
+    <title>JSDoc: Source: components/UserPerformanceData/index.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/UserActivityData/index.jsx</h1>
+    <h1 class="page-title">Source: components/UserPerformanceData/index.jsx</h1>
 
     
 
@@ -27,31 +27,31 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React from 'react'
-import UserActivityDataItem from '../UserActivityDataItem'
+import RRadarChart from '../RRadarChart'
+
 
 /**
- * Transmits data and id to UserActivityDataItem component
- * 
- * @param { Object } data 
- * data retrieves userId and average-sessions array
- * 
- * @param { Number } id 
- * id which was passed in the url
+ * Retrieves user performance data and transmits props to RRadarChart component
+ * @param { Object } perfData userId, kind{1:cardio, 2:energy, etc..}, data[value, kind]
+ * @param { Object } performance parent Object
+ * @returns { Component } RRadarChart 
  */
-function UserActivityData({ data, id }) {
+function UserPerformanceData({ perfData, performance }) {
     return (
         &lt;>
-                 &lt;div className='sportSee-activity'>
-                    &lt;UserActivityDataItem
-                        userId={id}
-                        sessions={data.sessions}
+                &lt;div className='sportSee-performance'>
+                    &lt;RRadarChart
+                        userId={perfData.userId}
+                        kind={perfData.kind}
+                        perfData={perfData.data}
+                        performance={performance}
                     />
                 &lt;/div>
-         &lt;/>
+        &lt;/>
     )
 };
 
-export default UserActivityData</code></pre>
+export default UserPerformanceData</code></pre>
         </article>
     </section>
 

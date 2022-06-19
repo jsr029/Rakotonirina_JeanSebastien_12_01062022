@@ -563,6 +563,166 @@ Uses BarChart component from recharts library to display bar graph</p>
     
 
     
+    <h4 class="name" id="GetUserPerformance"><span class="type-signature"></span>GetUserPerformance<span class="signature">(id)</span><span class="type-signature"> &rarr; {Component}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Gets User Performance data</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>user props id</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_GetUserPerformance.jsx.html">pages/GetUserPerformance.jsx</a>, <a href="pages_GetUserPerformance.jsx.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>UserPerformanceData in which we passed props data.data as perfData
+and data as performance</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Component</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="GetUserSessionsData"><span class="type-signature"></span>GetUserSessionsData<span class="signature">(id)</span><span class="type-signature"> &rarr; {component}</span></h4>
     
 
@@ -1032,6 +1192,188 @@ by the endPoints url case 2 in the switch function</p></td>
         
 <div class="param-desc">
     <p>LineChart from recharts library</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Component</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="RRadarChart"><span class="type-signature"></span>RRadarChart<span class="signature">(kind, perfData)</span><span class="type-signature"> &rarr; {Component}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Displays Radar graph using recharts library</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>kind</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>{1:cardio, 2:energy, etc..}</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>perfData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>[{value:110, kind:6}, {etc..}]</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_RRadarChart_index.jsx.html">components/RRadarChart/index.jsx</a>, <a href="components_RRadarChart_index.jsx.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>RadarChart from recharts library</p>
 </div>
 
 
@@ -1554,6 +1896,188 @@ id, userInfos{firstname,lastName}, score, keyData{caloriesCount,proteinCount, ca
     
 
     
+    <h4 class="name" id="UserPerformanceData"><span class="type-signature"></span>UserPerformanceData<span class="signature">(perfData, performance)</span><span class="type-signature"> &rarr; {Component}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Retrieves user performance data and transmits props to RRadarChart component</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>perfData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>userId, kind{1:cardio, 2:energy, etc..}, data[value, kind]</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>performance</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>parent Object</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_UserPerformanceData_index.jsx.html">components/UserPerformanceData/index.jsx</a>, <a href="components_UserPerformanceData_index.jsx.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>RRadarChart</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Component</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="UserSessionsData"><span class="type-signature"></span>UserSessionsData<span class="signature">(data)</span><span class="type-signature"> &rarr; {Component}</span></h4>
     
 
@@ -1812,13 +2336,13 @@ id, userInfos{firstname,lastName}, score, keyData{caloriesCount,proteinCount, ca
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#DBarChart">DBarChart</a></li><li><a href="global.html#GetUserActivityData">GetUserActivityData</a></li><li><a href="global.html#GetUserMainData">GetUserMainData</a></li><li><a href="global.html#GetUserSessionsData">GetUserSessionsData</a></li><li><a href="global.html#HorizontalMenu">HorizontalMenu</a></li><li><a href="global.html#NotFound">NotFound</a></li><li><a href="global.html#RLineChart">RLineChart</a></li><li><a href="global.html#UserActivityData">UserActivityData</a></li><li><a href="global.html#UserActivityDataItem">UserActivityDataItem</a></li><li><a href="global.html#UserMainData">UserMainData</a></li><li><a href="global.html#UserSessionsData">UserSessionsData</a></li><li><a href="global.html#VerticalMenu">VerticalMenu</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#DBarChart">DBarChart</a></li><li><a href="global.html#GetUserActivityData">GetUserActivityData</a></li><li><a href="global.html#GetUserMainData">GetUserMainData</a></li><li><a href="global.html#GetUserPerformance">GetUserPerformance</a></li><li><a href="global.html#GetUserSessionsData">GetUserSessionsData</a></li><li><a href="global.html#HorizontalMenu">HorizontalMenu</a></li><li><a href="global.html#NotFound">NotFound</a></li><li><a href="global.html#RLineChart">RLineChart</a></li><li><a href="global.html#RRadarChart">RRadarChart</a></li><li><a href="global.html#UserActivityData">UserActivityData</a></li><li><a href="global.html#UserActivityDataItem">UserActivityDataItem</a></li><li><a href="global.html#UserMainData">UserMainData</a></li><li><a href="global.html#UserPerformanceData">UserPerformanceData</a></li><li><a href="global.html#UserSessionsData">UserSessionsData</a></li><li><a href="global.html#VerticalMenu">VerticalMenu</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sun Jun 19 2022 18:03:14 GMT+0200 (heure d’été d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sun Jun 19 2022 18:40:20 GMT+0200 (heure d’été d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>
