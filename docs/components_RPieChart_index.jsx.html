@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/UserActivityData/index.jsx</title>
+    <title>JSDoc: Source: components/RPieChart/index.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/UserActivityData/index.jsx</h1>
+    <h1 class="page-title">Source: components/RPieChart/index.jsx</h1>
 
     
 
@@ -27,31 +27,48 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React from 'react'
-import UserActivityDataItem from '../UserActivityDataItem'
+import { PieChart, Pie, ResponsiveContainer, Cell} from 'recharts'
 
 /**
- * Transmits data and id to UserActivityDataItem component
- * 
- * @param { Object } data 
- * data retrieves userId and average-sessions array
- * 
- * @param { Number } id 
- * id which was passed in the url
+ * Retrieves user datas for displaying Pie Chart
+ * @param { Object } scoreUser {id:, userInfos{firstName}, score, keyData{caloriesCount, etc..}}
+ * @returns { Component } PieChart component from Recharts library
  */
-function UserActivityData({ data, id }) {
-    return (
-        &lt;>
-                 &lt;div className='sportSee-activity'>
-                    &lt;UserActivityDataItem
-                        userId={id}
-                        sessions={data.sessions}
-                    />
-                &lt;/div>
-         &lt;/>
-    )
-};
+const RPieChart = ({ scoreUser }) => {        
+        const score = scoreUser.score * 100
+        // Sample data
+        const data = [
+        {name: '% de votre objectif', score: score},
+        {name: '100% de votre objectif', score: 75-score}
+        ]
+        const COLORS = [
+                '#FF0000',
+                '#FFF'
+        ]
+        
+        return (
+                &lt;>
+                &lt;h2 className='sportSee-pie'>{score}% &lt;br /> de votre &lt;br /> objectif&lt;/h2>
+                &lt;ResponsiveContainer width="100%" height={300}>
+                &lt;PieChart width={340} height={340}>
+                        &lt;Pie 
+                        data={data} 
+                        dataKey="score" 
+                        outerRadius={100} 
+                        innerRadius={90} 
+                        startAngle={90}
+                         >
+{
+          	data.map((entry, index) => &lt;Cell key={index} fill={COLORS[index % COLORS.length]}/>)
+          }
+                        &lt;/Pie>
+                &lt;/PieChart>
+                &lt;/ResponsiveContainer>
+                &lt;/>
+        )
+}
 
-export default UserActivityData</code></pre>
+export default RPieChart;</code></pre>
         </article>
     </section>
 
