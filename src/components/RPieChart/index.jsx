@@ -1,6 +1,11 @@
 import React from 'react'
 import { PieChart, Pie, ResponsiveContainer, Cell} from 'recharts'
 
+/**
+ * Retrieves user datas for displaying Pie Chart
+ * @param { Object } scoreUser {id:, userInfos{firstName}, score, keyData{caloriesCount, etc..}}
+ * @returns { Component } PieChart component from Recharts library
+ */
 const RPieChart = ({ scoreUser }) => {        
         const score = scoreUser.score * 100
         // Sample data

@@ -9,8 +9,7 @@ import { Radar, RadarChart, PolarGrid,
  * @returns { Component } RadarChart from recharts library
  */
 function RRadarChart({ kind, perfData }) {   
-    console.log(perfData)
-         // Sample data
+          // Sample data
     let data = []
     const frenchKind = {
         6:'Intensité',
