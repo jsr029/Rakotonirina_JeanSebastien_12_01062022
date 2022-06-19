@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: pages/GetUserActivityData.jsx</title>
+    <title>JSDoc: Source: components/NotFound/index.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: pages/GetUserActivityData.jsx</h1>
+    <h1 class="page-title">Source: components/NotFound/index.jsx</h1>
 
     
 
@@ -27,27 +27,22 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React from 'react'
-import UserActivityData from '../components/UserActivityData'
-import HandleChange from '../components/utils/HandleChange'
+import { Link } from 'react-router-dom';
 
 /**
- * Retrieves user activity data 
- * @params { Number } id props 
- * @return { Promise }
+ * Displays error 404 page with a link to home page
  */
-function GetUserActivityData({ id }) {
-	const { data, isLoading, error } = HandleChange(id, 1)
-    	if (error) {
-		return &lt;span>Il y a un problème&lt;/span>
-	}
-
-	return isLoading ? &lt;div>Chargement...&lt;/div> : (
-		&lt;React.Fragment>
-			&lt;UserActivityData data={data.data} id={id}/>
-		&lt;/React.Fragment>
-	)
+function NotFound(){
+        return (
+        &lt;div className='error'>
+            &lt;h1>Oups la page demandée n'existe pas !&lt;/h1>
+            &lt;p>Serveur introuvable, impossible de charger les données.&lt;/p>
+            &lt;p>&lt;Link to='/'>Retour à l"Accueil&lt;/Link>&lt;/p>
+        &lt;/div>
+    );
 };
-export default GetUserActivityData</code></pre>
+
+export default NotFound</code></pre>
         </article>
     </section>
 

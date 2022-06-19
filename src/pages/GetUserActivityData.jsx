@@ -3,7 +3,9 @@ import UserActivityData from '../components/UserActivityData'
 import HandleChange from '../components/utils/HandleChange'
 
 /**
- * Function <GetUserActivityData> gets user activity data * 
+ * Retrieves user activity data 
+ * @params { Number } id props 
+ * @return { Promise }
  */
 function GetUserActivityData({ id }) {
 	const { data, isLoading, error } = HandleChange(id, 1)

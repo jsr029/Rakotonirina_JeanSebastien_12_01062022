@@ -2,7 +2,9 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 /**
- * Component <VerticalMenu> displays the vertical menu  
+ * Displays the vertical menu  
+ * 
+ * 4 Icons images 
  */
 function VerticalMenu() {
     return (

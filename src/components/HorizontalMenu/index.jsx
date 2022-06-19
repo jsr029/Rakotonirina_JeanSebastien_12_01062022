@@ -2,8 +2,9 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 
 /**
- * Component <HorizontalMenu>
- * Displays the horizontal menu with NavLink
+  * Displays the horizontal menu 
+  * 
+  * Logo, Accueil, Profil, Réglage, Communauté
  */
 function HorizontalMenu() {
     return (

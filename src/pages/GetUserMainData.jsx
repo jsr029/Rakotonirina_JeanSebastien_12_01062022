@@ -7,13 +7,24 @@ import HandleChange from '../components/utils/HandleChange'
 import NotFound from '../components/NotFound'
 
 /**
- * function <GetUserMainData>
- * Catches the id with useParams hook and pass it in the url with useFetch hook
+ * 
+ * Retrieves the id with useParams hook and pass it in the url with useFetch hook
+ * 
  * Uses the first endPoints http://localhost:5000/user/${id} to connect at the datas server 
+ * 
  * Gets the user datas infos
  */
 function GetUserMainData() {
+	/**
+	 * Catches the id by useParms hook function
+	 */
 	const id = useParams().id
+	/**
+	 * Puts conditions :
+	 * - if id!=12 and id!=18 returns error 404 page inside <NotFound /> component
+	 * - else @returns {Promise} function HandleChange 
+	 *  
+	 */
 	if(id !== '12' && id !== '18')
 	{
 		return (
@@ -23,10 +34,23 @@ function GetUserMainData() {
 			</>
 		)		
 	}else{
+		/**
+		 * retrieves data, isLoading, error 
+		 */
 	const { data, isLoading, error } = HandleChange(id,0)
+	/**
+	 * @returns { String } 'Il y a un probleme' if error 
+	 */
     	if (error) {
 		return <span>Il y a un problème</span>
 	}
+	/**
+	 * Ternary
+	 * 
+	 * if isLoading = true returns 'Chargement...'
+	 * 
+	 * else returns <HorizontalMenu/>, <VerticalMenu /> and <UserMainData /> components
+	 */
 	return isLoading ? <div>Chargement...</div> : (
 		<React.Fragment>
 		<HorizontalMenu />

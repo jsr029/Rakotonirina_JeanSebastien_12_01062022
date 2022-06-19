@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+/**
+ * Displays error 404 page with a link to home page
+ */
 function NotFound(){
         return (
         <div className='error'>

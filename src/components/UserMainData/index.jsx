@@ -6,14 +6,14 @@ import RightBloc from '../RightBloc'
 import RPieChart from '../RPieChart'
 
 /** 
- * Component <UserMainData> 
  * Displays all data we need from all endpoints
+ * 
  * Calls components :
- * <GetUserActivityData> retrieves user activity data for Bar chart
- * <GetUserSessionsData> retrieves user average sessions data for Line chart
- * <GetUserPerformance> retrieves user performance data for radar chart
- * <RPieChart> retrieves user score data for pie chart
- * <RightBloc> retrieves user data for displaying calories, lipid, protein and glucid counts in the right bloc
+ * - GetUserActivityData component retrieves user activity data for Bar chart
+ * - GetUserSessionsData  component retrieves user average sessions data for Line chart
+ * - GetUserPerformance component retrieves user performance data for radar chart
+ * - RPieChart component retrieves user score data for pie chart
+ * - RightBloc component retrieves user data for displaying calories, lipid, protein and glucid counts in the right bloc
 */
 
 function UserMainData({ dataUser }) {
