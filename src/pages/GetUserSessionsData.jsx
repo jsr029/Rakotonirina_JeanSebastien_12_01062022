@@ -3,13 +3,15 @@ import React from 'react'
 import UserSessionsData from '../components/UserSessionsData'
 import HandleChange from '../components/utils/HandleChange'
 
+/**
+ * Gets User Average-Sessions data 
+ * Uses UserSessionsData component in which props data was passed
+ * 
+ * @param { Number } id props user id, it is used as parameter in HandleChange function to retrieve data  
+ * by the endPoints url case 2 in the switch function
+ */
 function GetUserSessionsData({ id }) {
-    /*const url = window.location.href
-    const id = url.split('=')[1]*/
 	const { data, isLoading, error } = HandleChange(id, 2)
-    /*const { data, isLoading, error } = useFetch(
-		`http://localhost:5000/user/${id}/average-sessions`
-    )*/
     	if (error) {
 		return <span>Il y a un problème</span>
 	}

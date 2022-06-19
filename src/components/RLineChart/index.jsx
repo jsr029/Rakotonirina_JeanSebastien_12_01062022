@@ -8,6 +8,11 @@ import {
     YAxis
 } from 'recharts';
   
+/**
+ * Displays Line Chart graph
+ * @param { sessions } sessions props sessions bringing data we need to build Line Chart graph 
+ * @returns { Component } LineChart from recharts library
+ */
 function RLineChart({ sessions }) {
     let pdata = []
     const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D']

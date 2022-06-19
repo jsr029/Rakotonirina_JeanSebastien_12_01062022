@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: pages/GetUserActivityData.jsx</title>
+    <title>JSDoc: Source: components/UserSessionsData/index.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: pages/GetUserActivityData.jsx</h1>
+    <h1 class="page-title">Source: components/UserSessionsData/index.jsx</h1>
 
     
 
@@ -27,27 +27,25 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React from 'react'
-import UserActivityData from '../components/UserActivityData'
-import HandleChange from '../components/utils/HandleChange'
+import RLineChart from '../RLineChart'
 
 /**
- * Gets user activity data 
- * @param { number } id  
- * props user id
+ * Transmits props data as sessions to RlineChart component for displaying Line Chart
+ * @param { Object } data userId, sessions[{day, sessionLength}]
+ * @return { Component } RLineChart
  */
-function GetUserActivityData({ id }) {
-	const { data, isLoading, error } = HandleChange(id, 1)
-    	if (error) {
-		return &lt;span>Il y a un problème&lt;/span>
-	}
-
-	return isLoading ? &lt;div>Chargement...&lt;/div> : (
-		&lt;React.Fragment>
-			&lt;UserActivityData data={data.data} id={id}/>
-		&lt;/React.Fragment>
-	)
+function UserSessionsData({ data }) {
+    console.log(data)
+    return (
+        &lt;>
+                 &lt;div className='sportSee-sessions'>
+                    &lt;RLineChart sessions={data.sessions} />
+                &lt;/div>
+         &lt;/>
+    )
 };
-export default GetUserActivityData</code></pre>
+
+export default UserSessionsData</code></pre>
         </article>
     </section>
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: pages/GetUserActivityData.jsx</title>
+    <title>JSDoc: Source: components/RLineChart/index.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: pages/GetUserActivityData.jsx</h1>
+    <h1 class="page-title">Source: components/RLineChart/index.jsx</h1>
 
     
 
@@ -27,27 +27,58 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React from 'react'
-import UserActivityData from '../components/UserActivityData'
-import HandleChange from '../components/utils/HandleChange'
-
+import {
+    LineChart,
+    ResponsiveContainer,
+    Legend, Tooltip,
+    Line,
+    XAxis,
+    YAxis
+} from 'recharts';
+  
 /**
- * Gets user activity data 
- * @param { number } id  
- * props user id
+ * Displays Line Chart graph
+ * @param { sessions } sessions props sessions bringing data we need to build Line Chart graph 
+ * @returns { Component } LineChart from recharts library
  */
-function GetUserActivityData({ id }) {
-	const { data, isLoading, error } = HandleChange(id, 1)
-    	if (error) {
-		return &lt;span>Il y a un problème&lt;/span>
-	}
-
-	return isLoading ? &lt;div>Chargement...&lt;/div> : (
-		&lt;React.Fragment>
-			&lt;UserActivityData data={data.data} id={id}/>
-		&lt;/React.Fragment>
-	)
-};
-export default GetUserActivityData</code></pre>
+function RLineChart({ sessions }) {
+    let pdata = []
+    const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
+    for(let i=0; i &lt; sessions.length; i++){
+        pdata.push({
+            name: days[i],
+            min: sessions[i].sessionLength
+        })
+    }
+    return (
+        &lt;>
+            &lt;h2 className="text-sessions">
+                Duréee Moyenne &lt;br/>des Sessions
+            &lt;/h2>
+            &lt;ResponsiveContainer width="100%" height={300}>
+                &lt;LineChart data={pdata} 
+                width="100%" 
+                height={340} 
+                margin={{ top:0, bottom:0, right: 5, left:-55 }} 
+                stroke="white"
+                >
+                    &lt;XAxis 
+                        dataKey="name" 
+                        axisLine={false}
+                        interval={'preserveStartEnd'} 
+                        stroke="white"
+                        />
+                    &lt;YAxis dataKey="y" domain={[0, 100]} xd={25} axisLine={false} tick={false} />
+                    &lt;Legend />
+                    &lt;Tooltip />
+                    &lt;Line type="monotone" dataKey="min"
+                        stroke="#FFF" dot={false} />
+                &lt;/LineChart>
+            &lt;/ResponsiveContainer>
+        &lt;/>
+    );
+}
+export default RLineChart</code></pre>
         </article>
     </section>
 
