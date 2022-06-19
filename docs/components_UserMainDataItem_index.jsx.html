@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: pages/GetUserMainData.jsx</title>
+    <title>JSDoc: Source: components/UserMainDataItem/index.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: pages/GetUserMainData.jsx</h1>
+    <h1 class="page-title">Source: components/UserMainDataItem/index.jsx</h1>
 
     
 
@@ -27,73 +27,38 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React from 'react'
-import UserMainData from '../components/UserMainData'
-import { useParams } from 'react-router-dom'
-import HorizontalMenu from '../components/HorizontalMenu'
-import VerticalMenu from '../components/VerticalMenu'
-import HandleChange from '../components/utils/HandleChange'
-import NotFound from '../components/NotFound'
 
 /**
- * 
- * Retrieves the id with useParams hook and pass it in the url with useFetch hook
- * 
- * Uses the first endPoints http://localhost:5000/user/${id} to connect at the datas server 
- * 
- * Gets the user datas infos
- * @returns { Component } HorizontalMenu, VerticalMenu, UserMainData 
+ * Displays Main Data Item
+ * @param { Number } id user id
+ * @param { Object } dataInfos user basic data infos
+ * @param { Object } keyData calories etc.. data
+ * @param { Object } score score count data
+ * @returns { Html } user data basic infos
  */
-function GetUserMainData() {
-	/**
-	 * Retrieves the id by useParms hook function
-	 */
-	const id = useParams().id
-	/**
-	 * Puts conditions :
-	 * - if id!=12 and id!=18 returns error 404 page inside &lt;NotFound /> component
-	 * - else @returns {Promise} function HandleChange 
-	 *  
-	 */
-	if(id !== '12' &amp;&amp; id !== '18')
-	{
-		return (
-			&lt;>
-				&lt;h1>La valeur de id est incorrecte, elle doit être 12 ou 18&lt;/h1>
-				&lt;NotFound />
-			&lt;/>
-		)		
-	}else{
-		/**
-		 * retrieves data, isLoading, error from HandleChange using id and case 0 
-		 * corresponding at first endPoints url in the switch
-		 */
-	const { data, isLoading, error } = HandleChange(id,0)
-	/**
-	 * @returns { String } 'Il y a un probleme' if error 
-	 */
-    	if (error) {
-		return &lt;span>Il y a un problème&lt;/span>
-	}
-	/**
-	 * Ternary
-	 * 
-	 * if isLoading = true returns 'Chargement...'
-	 * 
-	 * else returns &lt;HorizontalMenu/>, &lt;VerticalMenu /> and &lt;UserMainData /> components
-	 */
-	return isLoading ? &lt;div>Chargement...&lt;/div> : (
-		&lt;React.Fragment>
-		&lt;HorizontalMenu />
-		&lt;div className='menu-graph-bloc'>
-			&lt;VerticalMenu />
-			&lt;UserMainData dataUser={data.data} id={id}/>
-		&lt;/div>
-		&lt;/React.Fragment>
-	)
-	}
-};
+function UserMainDataItem({ id, dataInfos, keyData, score }){
+    console.log(dataInfos)
+    return (
+        &lt;>
+            &lt;h1>
+                &lt;span className='sportSee-item-welcome'>Bonjour&lt;/span> 
+                &lt;span className='sportSee-item-firstname'> {dataInfos.firstName}&lt;/span>
+            &lt;/h1>
+            &lt;p>Félicitation ! Vous avez explosé vos objectifs hier &lt;span role="img" aria-label="emoji">👏&lt;/span>&lt;/p>
+            &lt;ul className='sportSee-item'>
+                &lt;li className='sportSee-item-todayScore'>
+                {score}
+                &lt;/li>
+                &lt;li className='sportSee-item-calorieCount'>{keyData.calorieCount / 1000}kCal&lt;/li>
+                &lt;li className='sportSee-item-proteineCount'>{keyData.proteinCount}g&lt;/li>
+                &lt;li className='sportSee-item-carbohydrateCount'>{keyData.carbohydrateCount}g&lt;/li>
+                &lt;li className='sportSee-item-lipidCount'>{keyData.lipidCount}g&lt;/li>
+            &lt;/ul>
+         &lt;/>    
+    )
+}
 
-export default GetUserMainData</code></pre>
+export default UserMainDataItem</code></pre>
         </article>
     </section>
 

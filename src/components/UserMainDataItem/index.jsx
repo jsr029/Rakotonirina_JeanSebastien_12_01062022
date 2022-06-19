@@ -1,5 +1,13 @@
 import React from 'react'
 
+/**
+ * Displays Main Data Item
+ * @param { Number } id user id
+ * @param { Object } dataInfos user basic data infos
+ * @param { Object } keyData calories etc.. data
+ * @param { Object } score score count data
+ * @returns { Html } user data basic infos
+ */
 function UserMainDataItem({ id, dataInfos, keyData, score }){
     console.log(dataInfos)
     return (

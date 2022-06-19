@@ -6,6 +6,7 @@ import HandleChange from '../components/utils/HandleChange'
  * Gets user activity data 
  * @param { number } id  
  * props user id
+ * @returns { Component } UserActivityData with data.data as props data
  */
 function GetUserActivityData({ id }) {
 	const { data, isLoading, error } = HandleChange(id, 1)

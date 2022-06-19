@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
   * Displays the horizontal menu 
   * 
   * Logo, Accueil, Profil, Réglage, Communauté
+  * @returns { Html } menu
  */
 function HorizontalMenu() {
     return (

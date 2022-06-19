@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: pages/GetUserMainData.jsx</title>
+    <title>JSDoc: Source: components/UserSessionsDataIem/index.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: pages/GetUserMainData.jsx</h1>
+    <h1 class="page-title">Source: components/UserSessionsDataIem/index.jsx</h1>
 
     
 
@@ -27,73 +27,42 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React from 'react'
-import UserMainData from '../components/UserMainData'
-import { useParams } from 'react-router-dom'
-import HorizontalMenu from '../components/HorizontalMenu'
-import VerticalMenu from '../components/VerticalMenu'
-import HandleChange from '../components/utils/HandleChange'
-import NotFound from '../components/NotFound'
+import { Line } from 'react-chartjs-2'
+
 
 /**
- * 
- * Retrieves the id with useParams hook and pass it in the url with useFetch hook
- * 
- * Uses the first endPoints http://localhost:5000/user/${id} to connect at the datas server 
- * 
- * Gets the user datas infos
- * @returns { Component } HorizontalMenu, VerticalMenu, UserMainData 
+ * Transmits user average-sessions data to Line component
+ * @param { Numnber } userId props user id 
+ * @param { Object } sessions props average-sessions
+ * @returns { Component } Line component from recharts library
  */
-function GetUserMainData() {
-	/**
-	 * Retrieves the id by useParms hook function
-	 */
-	const id = useParams().id
-	/**
-	 * Puts conditions :
-	 * - if id!=12 and id!=18 returns error 404 page inside &lt;NotFound /> component
-	 * - else @returns {Promise} function HandleChange 
-	 *  
-	 */
-	if(id !== '12' &amp;&amp; id !== '18')
-	{
-		return (
-			&lt;>
-				&lt;h1>La valeur de id est incorrecte, elle doit être 12 ou 18&lt;/h1>
-				&lt;NotFound />
-			&lt;/>
-		)		
-	}else{
-		/**
-		 * retrieves data, isLoading, error from HandleChange using id and case 0 
-		 * corresponding at first endPoints url in the switch
-		 */
-	const { data, isLoading, error } = HandleChange(id,0)
-	/**
-	 * @returns { String } 'Il y a un probleme' if error 
-	 */
-    	if (error) {
-		return &lt;span>Il y a un problème&lt;/span>
-	}
-	/**
-	 * Ternary
-	 * 
-	 * if isLoading = true returns 'Chargement...'
-	 * 
-	 * else returns &lt;HorizontalMenu/>, &lt;VerticalMenu /> and &lt;UserMainData /> components
-	 */
-	return isLoading ? &lt;div>Chargement...&lt;/div> : (
-		&lt;React.Fragment>
-		&lt;HorizontalMenu />
-		&lt;div className='menu-graph-bloc'>
-			&lt;VerticalMenu />
-			&lt;UserMainData dataUser={data.data} id={id}/>
-		&lt;/div>
-		&lt;/React.Fragment>
-	)
-	}
-};
+function UserSessionsDataItem({ userId, sessions }){
+    let averageSessionDay = []
+    let averageSessionLength = []
+    for(let i=0; i &lt; sessions.length; i++){
+        averageSessionDay.push(sessions[i].day)
+        averageSessionLength.push(sessions[i].sessionLength)
+    }
+    const data = {
+        labels: ['L', 'M', 'M', 'J', 'V', 'S', 'D'],
+        datasets:[
+            {
+                label : "Durée Moyenne des Sessions",
+                data: averageSessionLength,
+                backgroundColor:['#FF0101']
+            }
+        ]
+    }
+    return (
+        &lt;>
+                &lt;div className={'sportSee-sessions-item'}>
+                    &lt;Line data={data} />
+                &lt;/div>
+         &lt;/>    
+    )
+}
 
-export default GetUserMainData</code></pre>
+export default UserSessionsDataItem</code></pre>
         </article>
     </section>
 

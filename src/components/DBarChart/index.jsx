@@ -15,6 +15,7 @@ import {
  * Gets name, kg, calories user datas
  * Uses BarChart component from recharts library to display bar graph
  * @param { Object } sessions day, kilogram, calories datas for displaying BarChart from recharts library
+ * @returns { Html } displays Bar Chart graph
  */
 function DBarChart({ sessions }) {
    let data = []

@@ -9,6 +9,7 @@ import UserActivityDataItem from '../UserActivityDataItem'
  * 
  * @param { Number } id 
  * id which was passed in the url
+ * @returns { Component } UserActivityDataItem with id and data.sessions as userId and sessions props
  */
 function UserActivityData({ data, id }) {
     return (

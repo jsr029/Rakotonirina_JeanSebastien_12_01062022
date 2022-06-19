@@ -13,10 +13,11 @@ import NotFound from '../components/NotFound'
  * Uses the first endPoints http://localhost:5000/user/${id} to connect at the datas server 
  * 
  * Gets the user datas infos
+ * @returns { Component } HorizontalMenu, VerticalMenu, UserMainData 
  */
 function GetUserMainData() {
 	/**
-	 * Catches the id by useParms hook function
+	 * Retrieves the id by useParms hook function
 	 */
 	const id = useParams().id
 	/**
@@ -35,7 +36,8 @@ function GetUserMainData() {
 		)		
 	}else{
 		/**
-		 * retrieves data, isLoading, error 
+		 * retrieves data, isLoading, error from HandleChange using id and case 0 
+		 * corresponding at first endPoints url in the switch
 		 */
 	const { data, isLoading, error } = HandleChange(id,0)
 	/**

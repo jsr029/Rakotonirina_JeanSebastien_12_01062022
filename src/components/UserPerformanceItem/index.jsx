@@ -1,6 +1,11 @@
 import React from 'react' 
 import RRadarChart from '../RRadarChart'
 
+/**
+ * Transmits user performance data to RRadarChart component
+ * @param { Object } userId user id
+ * @returns { Component } RRadarChart with userId, kind, perfData as props
+ */
 function UserPerformanceItem({ userId, kind, perfData }){
     let perfValue = []
     let perfKind = []

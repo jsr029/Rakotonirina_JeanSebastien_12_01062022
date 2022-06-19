@@ -4,7 +4,8 @@ import { NavLink } from 'react-router-dom'
 /**
  * Displays the vertical menu  
  * 
- * 4 Icons images 
+ * 4 Icons images
+ * @returns { Html } icons image menu
  */
 function VerticalMenu() {
     return (

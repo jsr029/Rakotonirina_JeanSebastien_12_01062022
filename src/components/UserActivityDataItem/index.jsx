@@ -5,6 +5,7 @@ import DBarChart from '../DBarChart'
  * Displays datas userId and sessions for DBarChart component
  * @param { Number } userId props user id
  * @param { Object } sessions props user sessions
+ * @return { Component } DBarChart with sessions as props sessions
  */
 function UserActivityDataItem({ userId, sessions }){
     let sessionsDay = []

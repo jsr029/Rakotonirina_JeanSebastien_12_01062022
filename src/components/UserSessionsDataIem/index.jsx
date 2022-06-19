@@ -1,6 +1,13 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
 
+
+/**
+ * Transmits user average-sessions data to Line component
+ * @param { Numnber } userId props user id 
+ * @param { Object } sessions props average-sessions
+ * @returns { Component } Line component from recharts library
+ */
 function UserSessionsDataItem({ userId, sessions }){
     let averageSessionDay = []
     let averageSessionLength = []
