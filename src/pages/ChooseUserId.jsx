@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 
 /** 
  * Displays the page where you choose one user between Karl and Cecilia by their id
- * @component 
  * Catch the id by watch useForm hook, 
  * Passed by the get method form request
  */

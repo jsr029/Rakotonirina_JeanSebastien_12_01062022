@@ -2,8 +2,9 @@ import React from 'react'
 import DBarChart from '../DBarChart'
 
 /**
- * function <UserActivityDataItem> transmits user id and data sessions
- * 
+ * Displays datas userId and sessions for DBarChart component
+ * @param { Number } userId props user id
+ * @param { Object } sessions props user sessions
  */
 function UserActivityDataItem({ userId, sessions }){
     let sessionsDay = []

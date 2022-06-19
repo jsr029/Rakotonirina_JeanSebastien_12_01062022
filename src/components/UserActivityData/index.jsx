@@ -2,7 +2,13 @@ import React from 'react'
 import UserActivityDataItem from '../UserActivityDataItem'
 
 /**
- * function <UserActivityData> transmits props to <UserActivityDataItem />
+ * Transmits data and id to UserActivityDataItem component
+ * 
+ * @param { Object } data 
+ * data retrieves userId and average-sessions array
+ * 
+ * @param { Number } id 
+ * id which was passed in the url
  */
 function UserActivityData({ data, id }) {
     return (
