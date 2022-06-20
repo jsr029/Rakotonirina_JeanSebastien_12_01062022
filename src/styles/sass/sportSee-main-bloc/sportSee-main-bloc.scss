@@ -129,8 +129,8 @@
 
     h2.text-sessions {
         position: absolute;
-        top: 10%;
-        left: 5%;
+        top: 0;
+        left: -34px;
         font-size: 15px;
         color: white;
         font-weight: 500;
@@ -139,12 +139,19 @@
 
 .sportSee-score {
     position: relative;
-
+    line-height: 26px;
+    .sportSee-pie-scoreTitle{
+        font-size: 26px;
+        font-weight: 700;
+    }
+    .sportSee-pie-scoreText{
+        font-weight: lighter;
+    }
     h2.sportSee-pie {
         font-size: 16px;
         position: absolute;
-        top: 35%;
-        left: 20%;
+        top: 83px;
+        left: 13%;
     }
 }
 

@@ -20,7 +20,8 @@ const RPieChart = ({ scoreUser }) => {
         
         return (
                 <>
-                <h2 className='sportSee-pie'>{score}% <br /> de votre <br /> objectif</h2>
+                <h2 className='sportSee-pie'><span className='sportSee-pie-scoreTitle'>{score}%</span> 
+                <br /> <span className="sportSee-pie-scoreText">de votre <br /> objectif</span></h2>
                 <ResponsiveContainer width="100%" height={300}>
                 <PieChart width={340} height={340}>
                         <Pie 

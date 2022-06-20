@@ -40,7 +40,7 @@ function RLineChart({ sessions }) {
                         interval={'preserveStartEnd'} 
                         stroke="white"
                         />
-                    <YAxis dataKey="y" domain={[0, 100]} xd={25} axisLine={false} tick={false} />
+                    <YAxis dataKey="min" domain={[0, 100]} xd={25} axisLine={false} tick={false} />
                     <Legend />
                     <Tooltip />
                     <Line type="monotone" dataKey="min"

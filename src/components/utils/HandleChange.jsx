@@ -99,8 +99,9 @@ function HandleChange(id, url) {
         }
         fetchData()
     }, [url])
-
-    return { data, isLoading, error, url }
+    
+    return { data, isLoading, error, url }    
+    
 };
 
 export default HandleChange;
