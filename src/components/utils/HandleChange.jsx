@@ -3,16 +3,21 @@ import {
 } from "react";
 
 /**
- * Switches between 4 urls, it depends on id value 
+ * Switches between 2 ids and in each switches betwween 4 urls endPoints
  * @param { Number } id props user id
  * @param { Url } url endPoints url
  * @returns { Object } data (object), isLoading (boolean), error, url (string)
  */
 function HandleChange(id, url) {
+    /**
+     * Statements initialiazing object, booleans 
+     */
     const [data, setData] = useState({})
     const [isLoading, setLoading] = useState(true)
     const [error, setError] = useState(false)
-
+    /**
+     * Swicthes between 2 ids in which switches between 4 urls endPonts
+     */
     switch (id) {
         case 12:
         default:
@@ -50,20 +55,45 @@ function HandleChange(id, url) {
             }
         break;
         }
-
+/**
+ * Allows us to inject lifeCycle notion Hook (ComponentDidiMount, ComponentWillMount...) inside components functions
+ * here fetchData
+ */
     useEffect(() => {
         if (!url) return
+        /**
+         * boolean state at true
+         */
         setLoading(true)
+        /**
+         * Fetches API to get data
+         * 
+         */
         async function fetchData() {
             try {
+                /**
+                 * The fetch takes the location of the resource as an argument
+                 */
                 const response = await fetch(url, {})
+                /**
+                 *  returns a promise as response 
+                 */
                 const data = await response.json()
+                /**
+                 * Data Object state changes
+                 */
                 setData(data)
 
             } catch (err) {
                 console.log(err)
+                /**
+                 * error boolean state at true
+                 */
                 setError(true)
             } finally {
+                /**
+                 * isLoading boolean state at false
+                 */
                 setLoading(false)
             }
         }
