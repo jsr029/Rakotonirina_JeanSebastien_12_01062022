@@ -16,7 +16,7 @@ function HandleChange(id, url) {
     const [isLoading, setLoading] = useState(true)
     const [error, setError] = useState(false)
     /**
-     * Swicthes between 2 ids in which switches between 4 urls endPonts
+     * Swicthes between 2 ids in each switches between 4 urls endPonts
      */
     switch (id) {
         case 12:

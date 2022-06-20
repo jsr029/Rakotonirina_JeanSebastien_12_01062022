@@ -16,7 +16,7 @@ import NotFound from '../components/NotFound'
  * @returns { Component } HorizontalMenu, VerticalMenu, UserMainData 
  */
 function GetUserMainData() {
-	/**
+		/**
 	 * Retrieves the id by useParms hook function
 	 */
 	const id = useParams().id

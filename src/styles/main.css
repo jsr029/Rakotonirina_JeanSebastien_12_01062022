@@ -99,6 +99,11 @@ ul {
   flex: 1;
 }
 
+@media screen and (max-width: 1023px) {
+  #root {
+    display: none;
+  }
+}
 .sportSee-main {
   width: 100%;
   display: flex;

@@ -43,3 +43,8 @@ ul{
 .navBar, .menu-graph-bloc{
     flex: 1;
 }
+@media screen and (max-width:1023px){
+    #root{
+        display: none;
+    }
+}
